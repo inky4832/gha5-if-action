@@ -5,7 +5,7 @@ on: push
 jobs:  
 
   test:
-    if: github.repository == 'inky4832/gha5-if-action' 
+    if: github.repository == 'inky4832/gha5-if-action2' 
     runs-on: ubuntu-latest  
 
     steps:  

@@ -5,7 +5,7 @@ on: push
 jobs:  
 
   test:
-    if: github.repository == 'inky4832/gha5-if-action2' 
+    
     runs-on: ubuntu-latest  
 
     steps:  
@@ -14,7 +14,8 @@ jobs:
           ls ${{ github.workspace }}  
           echo Run Test  
   
-  build:  
+  build: 
+    if: github.repository == 'inky4832/gha5-if-action' 
     needs: test  
     runs-on: ubuntu-latest  
 
