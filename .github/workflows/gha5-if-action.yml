@@ -15,7 +15,7 @@ jobs:
           echo Run Test  
   
   build: 
-    if: github.repository == 'inky4832/gha5-if-action' 
+    if: github.repository == 'inky4832/gha5-if-action2' 
     needs: test  
     runs-on: ubuntu-latest  
 
