@@ -1,64 +1,11 @@
-# 1) 캐시 적용전 코드
-# name: Cache 적용전 workflow
-
-# on: push
-
-# jobs:
-
-#   test:
-
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v4
-
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: 20
-
-#       - name: install dependencies
-#         run: npm install axios  requests 
-
-#       - name: Run Test
-#         run: echo Run Test
-#   build:
-#     needs: test
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v4
-
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: 20
-
-#       - name: install dependencies
-#         run: npm install axios  requests 
-
-#       - name: Run build
-#         run: echo Run build
-
-#   deploy:
-#     needs: build
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - name: Run Deploy
-#         run: echo Run Deploy
-
-
-# 2) 캐시 적용후 코드
-
-name: Cache 적용후 workflow  
+name: if action workflow  
 
 on: push  
 
 jobs:  
 
-  test:  
+  test:
+    if: github.repository == 'gha5-if-action' 
     runs-on: ubuntu-latest  
 
     steps:  
@@ -66,7 +13,7 @@ jobs:
         run: |  
           ls ${{ github.workspace }}  
           echo Run Test  
-  if: ${{github.repository}} == 'gha5-if-action' 
+  
   build:  
     needs: test  
     runs-on: ubuntu-latest  
