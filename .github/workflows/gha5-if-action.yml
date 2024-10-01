@@ -66,7 +66,7 @@ jobs:
         run: |  
           ls ${{ github.workspace }}  
           echo Run Test  
-
+  if: ${{github.repository}} == 'gha5-if-action' 
   build:  
     needs: test  
     runs-on: ubuntu-latest  
@@ -75,7 +75,7 @@ jobs:
 
       - name: Run Build  
         run: |  
-          ls ${{ github.workspace }}  
+          ls ${{ github.workspace }} 
           echo Run Build  
 
   deploy:  
