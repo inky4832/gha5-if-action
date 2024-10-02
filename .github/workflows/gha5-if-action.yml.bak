@@ -3,7 +3,7 @@ name: if action workflow
 on: push  
 
 jobs:  
-
+  if: RUNNER_OS == 'Linux'
   test:
     
     runs-on: ubuntu-latest  

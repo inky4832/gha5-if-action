@@ -3,9 +3,9 @@ name: if action workflow
 on: push  
 
 jobs:  
-  if: runner_os == 'Linux'
+  
   test:
-    
+    if: RUNNER_OS == 'Linux'
     runs-on: ubuntu-latest  
 
     steps:  
