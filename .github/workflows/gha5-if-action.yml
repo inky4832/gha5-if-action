@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest  
 
     steps:  
-
+      
       - name: Run Build  
         run: |  
           ls ${{ github.workspace }} 
@@ -30,6 +30,10 @@ jobs:
     needs: build  
     runs-on: ubuntu-latest  
 
-    steps:  
-      - name: Run Deploy  
-        run: echo Run Deploy
+    steps:
+      - name: Run Deploy1
+        id: run_deploy1
+        run: echo Run Deploy1
+      - name: Run Deploy2 
+        if steps.run_deploy1.outcome == 'success'
+        run: echo Run Deploy2
