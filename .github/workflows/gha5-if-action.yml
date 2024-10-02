@@ -32,8 +32,8 @@ jobs:
 
     steps:
       - name: Run Deploy1
-        id: run_deploy1
+        id: run_deploy1         
         run: echo Run Deploy1
       - name: Run Deploy2 
-        if steps.run_deploy1.outcome == 'success'
+        if: steps.run_deploy1.outcome == 'success'
         run: echo Run Deploy2
