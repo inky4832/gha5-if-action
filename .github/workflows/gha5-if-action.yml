@@ -3,14 +3,13 @@ name: if action workflow
 on: push  
 
 jobs:  
-  
+  if: runner.os == 'Linux'
   test:
-    
     runs-on: ubuntu-latest  
-
+    
     steps:  
       - name: Run Test  
-        if: runner_os == 'Linux'
+
         run: |  
           ls ${{ github.workspace }}  
           echo Run Test  

@@ -5,11 +5,11 @@ on: push
 jobs:  
   
   test:
-    if: runner_os == 'Linux'
     runs-on: ubuntu-latest  
-
+    if: runner.os == 'Linux'
     steps:  
       - name: Run Test  
+
         run: |  
           ls ${{ github.workspace }}  
           echo Run Test  
