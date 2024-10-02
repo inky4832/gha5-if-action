@@ -5,7 +5,7 @@ on: push
 jobs:  
   
   test:
-    if: RUNNER_OS == 'Linux'
+    if: runner_os == 'Linux'
     runs-on: ubuntu-latest  
 
     steps:  
