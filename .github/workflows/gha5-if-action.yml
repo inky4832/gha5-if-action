@@ -3,7 +3,7 @@ name: if action workflow
 on: push  
 
 jobs:  
-
+  if: runner_os == 'Linux'
   test:
     
     runs-on: ubuntu-latest  
@@ -15,7 +15,7 @@ jobs:
           echo Run Test  
   
   build: 
-    if: github.repository == 'inky4832/gha5-if-action2' 
+    if: github.repository == 'inky4832/gha5-if-action' 
     needs: test  
     runs-on: ubuntu-latest  
 
@@ -27,7 +27,6 @@ jobs:
           echo Run Build  
 
   deploy:  
-    if: failure()
     needs: build  
     runs-on: ubuntu-latest  
 
