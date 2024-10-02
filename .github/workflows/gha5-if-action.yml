@@ -27,6 +27,7 @@ jobs:
           echo Run Build  
 
   deploy:  
+    if: failure()
     needs: build  
     runs-on: ubuntu-latest  
 
